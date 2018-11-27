@@ -1,0 +1,23 @@
+============================================
+==== EJEMPLO DE CREACIÓN DE WEB MODULAR ====
+============================================
+APROXIMACIÓN SEGUNDA
+
+Entramos a la web por un único fichero 'index.php', y utilizando la variable
+'page' enviada por GET incluimos la página que corresponda.
+
+Esta aproximación implementaría un patrón de controlador frontal, pero sin utilizar
+el patrón arquitectonico modelo/vista/controlador
+
+Observad que los enlaces van siempre al mismo sitio, el fichero 'index.php'. Es
+la variable GET 'page' la que nos carga una u otra página.
+
+Esta aproximación tiene el problema de que no tenemos una definición de página
+completa en ningún sitio, por lo que es dificil a veces ver como
+quedaría presentado.
+Igualmente si al generar la página tenemos que hacer alguna redirección y
+cancelar el proceso que estamos realizando no lo podremos hacer pues
+ya se ha enviado parte del cuerpo de la petición HTTP al cliente.
+
+
+Mezclamos lógica y presentación

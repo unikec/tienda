@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+    <title>Muestra Tabla PHP</title>
+</head>
+<body>
+        <div class="jumbotron text-center">
+            <h1>Ejercicio Ajax muestra tabla PHP</h1>
+        </div>
+    <div class="container mx-10">
+        <form action="tabla.php" method="GET">
+        <label for="">Numero de Filas</label>
+        <input type="number" name="filas" id="fil">
+        <label for="">Numero de Columnas</label>
+        <input type="number" name="columnas" id="col">
+        <input type="submit" value="GO!" onclick="descargaArchivo()">
+    </form>
+   
+    </div>
+</body>
+<script src="js/muestaTablaPHP.js"></script>
+</html>

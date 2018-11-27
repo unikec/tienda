@@ -1,0 +1,25 @@
+============================================
+==== EJEMPLO DE CREACIÓN DE WEB MODULAR ====
+============================================
+
+
+APROXIMACIÓN PRIMERA
+
+Ejemplo de creación de una web modular usando partes que serán incluidas 
+para generar la página final de forma que se evite redundancia y facilite el
+mantenimiento
+
+Cada página include todos los includes de los elementos de la plantilla
+
+Esta aproximación tiene el problema de que no tenemos una definición de página
+completa en ningún sitio, por lo que es dificil a veces ver como
+quedaría presentado.
+Igualmente si al generar la página tenemos que hacer alguna redirección y
+cancelar el proceso que estamos realizando no lo podremos hacer pues
+ya se ha enviado parte del cuerpo de la petición HTTP al cliente.
+
+Mezclamos logica y presentación
+
+Carpetas
+- plantilla  - Contiene las partes de la página final
+
