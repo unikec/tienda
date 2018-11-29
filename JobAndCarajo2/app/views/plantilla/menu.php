@@ -6,7 +6,8 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href='?ctrl=listarOfertasControl'>Ofertas</a>
+        <a class="nav-link" href='?ctrl=listarOfertasControl&pag=1'>Ofertas</a>
+      <!--  <a class="nav-link" href='?ctrl=listarOfertasControl&pag=1&regPag=5'>Ofertas</a>-->
       </li>
       <li class="nav-item">
         <a class="nav-link" href='?ctrl=insertarOfertaControl'>Publicar una oferta</a>

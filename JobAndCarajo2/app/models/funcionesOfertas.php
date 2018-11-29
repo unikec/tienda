@@ -85,6 +85,38 @@ function verOfertas(){//cambiar a getOfertas
     return $ofertas;
 }
 
+function getOfertasLimitadas($inicio,$regPag){//cambiar a getOfertas
+    $conex=Conexion::getInstance();     
+    $sql="SELECT *, DATE_FORMAT(fechaFin, '%d/%m/%Y') AS fechaF, DATE_FORMAT(fecha_creacion, '%d/%m/%Y') AS fechaC FROM ofertas LEFT JOIN provincias ON ofertas.id_provincia=provincias.id LIMIT $inicio, $regPag";
+    // Especificamos el fetch mode antes de llamar a fetch()
+    $stmt = $conex->dbh->prepare($sql);
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    // Excecute
+    $stmt->execute();
+    // Acumulamos los resultados
+    $ofertas=[];
+    while ($row = $stmt->fetch()){
+        
+        //$ofertas[]=  $row['descripcion'];
+        $ofertas[$row['id_oferta']]=['id'=> $row['id_oferta'],'descripcion'=>$row['descripcion'],'contacto'=>$row['contacto'],
+            'telefono'=>$row['telefono'], 'email'=>$row['email'], 'direccion'=>$row['direccion'],
+            'poblacion'=>$row['poblacion'],'cp'=>$row['cp'], 'id_provincia'=>$row['id_provincia'],
+            'provincia'=>$row['provincia'], 'estado'=>$row['estado'],'fechaInicial'=>$row['fechaC'],
+            'fechaFin'=>$row['fechaF'],'psicologo'=>$row['psicologo'],
+            'candidato'=>$row['candidato'],'observaciones'=>$row['observaciones']];
+    }
+    return $ofertas;
+}
+/**$sth->execute(array(150, 'red'));
+$red = $sth->fetchAll(); */
+
+function totalOfertas(){
+    $conex=Conexion::getInstance();
+    //$sql="SELECT COUNT(*) FROM ofertas";
+    $totalOfertas =$conex->dbh->query("SELECT count(*) FROM ofertas")->fetchColumn();
+   
+    return $totalOfertas;
+}
 /**Para obtener toda la información detalle de una sola oferta*/
 function getOferta($id){
     $conex=Conexion::getInstance();
