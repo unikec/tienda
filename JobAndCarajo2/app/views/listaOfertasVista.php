@@ -37,10 +37,10 @@
 
 <nav aria-label="Page navigation example">
   <ul class="pagination">
-    <li class="page-item <?= $pagina<=1 ? 'disable' : ''?> "><a class="page-link" href="?ctrl=listarOfertasControl&pag=<?= $pagina-1?>">Anterior</a></li>
-		<?php for ($i=0; $i <$paginas ; $i++):?>
-    <li class="page-item <?= $pagina==$i+1 ? 'active' : ''?> "><a class="page-link " href="?ctrl=listarOfertasControl&pag=<?=$pagina+$i?>"><?=$i+1?></a></li>
+    <li class="page-item <?= $pagina<=1 ? 'disabled' : ''?> "><a class="page-link" href="?ctrl=listarOfertasControl&pag=<?= $pagina-1?>">Anterior</a></li>
+		<?php for ($i=1; $i <=$paginas ; $i++):?>
+    <li class="page-item <?= $pagina==$i ? 'active' : ''?> "><a class="page-link " href="?ctrl=listarOfertasControl&pag=<?=$i?>"><?=$i?></a></li>
 		<?php  endfor ?>
-    <li class="page-item <?= $pagina>=$paginas ? 'disable' : ''?>"><a class="page-link" href="?ctrl=listarOfertasControl&pag=<?=$pagina+1?>">Siguiente</a></li>
+    <li class="page-item <?= $pagina>=$paginas ? 'disabled' : ''?>"><a class="page-link" href="?ctrl=listarOfertasControl&pag=<?=$pagina+1?>">Siguiente</a></li>
   </ul>
 </nav>
