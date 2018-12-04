@@ -22,7 +22,7 @@
         <?= myCreaSelect('provincia', $provincias,$oferta['provincia'])?><?=$errores->ErrorFormateado('provincia')?><br>
         <label>Estado de la oferta:</label>
         <div id="estado" class="form-check border">
-            <input type="radio" class="form-check-input" name="estado" value="P"<?php if( $oferta['estado']=='P')echo  "checked"?>> Pendiente de iniciar<br>
+            <input type="radio" class="form-check-input" name="estado" value="P"<?php if( $oferta['estado']=='P')echo  "checked"?> checked> Pendiente de iniciar<br>
             <input type="radio" class="form-check-input" name="estado" value="R"<?php if( $oferta['estado']=='R')echo  "checked"?>> Realizando Selección<br>
         	<input type="radio" class="form-check-input" name="estado" value="S"<?php if( $oferta['estado']=='S')echo  "checked"?>> Seleccionando candidatos<br>
             <input type="radio" class="form-check-input" name="estado" value="C"<?php if( $oferta['estado']=='C')echo  "checked"?>> Cancelada<br></div>

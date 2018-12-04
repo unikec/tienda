@@ -2,10 +2,10 @@
 use Problema1\app\models\Conexion;
 
 /*Incluimos el fichero de la clase Conf*/
-require 'Configuration.php';
+require_once 'Configuration.php';
 
 /*Incluimos el fichero de la clase Conexion*/
-require 'Conexion.php';
+require_once 'Conexion.php';
 
 
 /** Con getProvincias se pretende obtener una lista de las provincias

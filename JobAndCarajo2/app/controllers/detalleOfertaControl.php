@@ -1,8 +1,11 @@
 <?php
-
+//session_start();
+if(!isset($_SESSION['dentro'])){
+    header('Location:?ctrl=loginControl');
+}
 /* Muesta la lista de tareas */
 
-include(MODEL_PATH.'funcionesOfertas.php');
+include_once (MODEL_PATH.'funcionesOfertas.php');
 
 $oferta=  getOferta($_GET['id']);
 

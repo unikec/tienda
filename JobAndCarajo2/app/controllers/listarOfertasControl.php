@@ -1,8 +1,11 @@
 <?php
-
+//session_start();
+if(!isset($_SESSION['dentro'])){
+    header('Location:?ctrl=loginControl');
+}
 /* Muesta la lista de tareas */
 
-include(MODEL_PATH.'funcionesOfertas.php');
+include_once (MODEL_PATH.'funcionesOfertas.php');
 
 $numOfertas=totalOfertas();
 $regPag=5;//numero de ofertas que va a mostrar mi pag
@@ -20,6 +23,7 @@ if($_GET['pag']>$paginasTotal || $_GET['pag']<=0){
 }else{
     $ofertas= getOfertasLimitadas((($paginaActiva-1)*$regPag),$regPag);//lequito uno porque el array empieza en cero
 // En un planteamiento real puede que incluyesemos más cosas
+
 echo CargaVista('plantilla/layout', array(
     'titulo'=>'Listado de Ofertas',
     'menu'=>CargaVista('plantilla/menu'),

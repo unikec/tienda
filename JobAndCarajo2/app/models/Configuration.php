@@ -14,7 +14,7 @@ class Configuration
     static $_instance;
     
     private function __construct(){
-        require 'confi.php';
+        require_once 'confi.php';
        // $this->_domain=$domain;
         $this->_userdb=$user;
         $this->_passdb=$password;

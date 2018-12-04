@@ -1,9 +1,10 @@
-<h3>¿Realmente desea borrar la oferta correspondiente a los siguiente datos?</h3>
+<h3 class="text-center">¿Realmente desea borrar la oferta correspondiente a los siguiente datos?</h3>
 
 <form  method="post">
-<div class='form-group'>
-<button type="submit" class="mx-auto btn btn-warning btn-lg" name="pregunta" value ="si">SI</button>
-<button type="submit" class="mx-auto btn btn-warning btn-lg" name="pregunta" value ="no">NO</button>
+
+<div class="text-center">
+  <button type="submit" class="btn btn-outline-warning btn-l mr-5 m-5"  name="pregunta" value ="si">SI</button>
+  <button type="submit" class="btn btn-outline-warning btn-s ml-5 my-5" name="pregunta" value ="no">NO</button>
 </div>
 </form>
 

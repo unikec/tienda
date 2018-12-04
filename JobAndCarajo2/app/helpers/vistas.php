@@ -32,7 +32,7 @@ function & CargaVista($vista, array  $variablesDeVista=NULL) //el &  es para que
     
     // Interpretamos plantilla
     ob_start();
-    include($ficheroVista);
+    include_once ($ficheroVista);
     $html = ob_get_clean();
     return $html;
 }

@@ -1,7 +1,11 @@
 <?php
-include (LIB_PATH.'GestorErrores.php');
-include (HELPERS_PATH.'funcionesGenerales.php');
-include (MODEL_PATH.'funcionesOfertas.php');
+//session_start();
+if(!isset($_SESSION['dentro'])){
+    header('Location:?ctrl=loginControl');
+}
+include_once (LIB_PATH.'GestorErrores.php');
+include_once (HELPERS_PATH.'funcionesGenerales.php');
+include_once (MODEL_PATH.'funcionesOfertas.php');
 
 // Inicializamos el gestor de errores que utilizaremos en la vista
 $errores=new GestorErrores('<span style="color:red; background:#EEE; padding:.2em 1em; margin:1em">', '</span>');
@@ -37,7 +41,7 @@ $Oferta=array(
     }
     else {
         // Filtrar datos
-        include ('filtro_compartido.php');
+        include_once ('filtro_compartido.php');
         FiltraCamposPost($errores);
         
         if ($errores->HayErrores())
