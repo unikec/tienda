@@ -85,13 +85,19 @@ else
         else
         {
             // Guardamos las modificaciones
-     // echo "hola voy a guardar";
-         modificarOferta(VPost('descripcion'), VPost('contacto'),VPost('telefono'),VPost('email'),VPost('direccion'),
-               VPost('poblacion'), VPost('cp'), VPost('id_provincia'), VPost('estado'),cambiaFormatoFecha(VPost('fechaFin')), VPost('psicologo'),
-               VPost('candidato'), VPost('observaciones'), $id);//cambiaFormatoFecha(VPost('fechaFin'))
-        //  saveOferta($ofertaModificada);
-            $htmlCuerpo="<p>Se ha guardado la oferta ....</p>";
-        }
+                if($_SESSION['admin']){
+                    // echo "hola voy a guardar";
+                modificarOferta(VPost('descripcion'), VPost('contacto'),VPost('telefono'),VPost('email'),VPost('direccion'),
+                VPost('poblacion'), VPost('cp'), VPost('id_provincia'), VPost('estado'),cambiaFormatoFecha(VPost('fechaFin')), VPost('psicologo'),
+                VPost('candidato'), VPost('observaciones'), $id);//cambiaFormatoFecha(VPost('fechaFin'))
+            //  saveOferta($ofertaModificada);
+                $htmlCuerpo="<p>Se ha guardado la oferta ....</p>";
+                }else{
+                modificarPsicologo(VPost('estado'),VPost('candidato'), VPost('observaciones'), $id);
+                $htmlCuerpo="<p>Se ha guardado la oferta ....</p>";
+                }
+            }
+     
     }
 } // de Han indicado el id
 

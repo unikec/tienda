@@ -1,5 +1,5 @@
 <?php
-
+include '../php/conex.php';
 
 $nombre= $_POST["nombre"];
 $direccion= $_POST["direccion"];

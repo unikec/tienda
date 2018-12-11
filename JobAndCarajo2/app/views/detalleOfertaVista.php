@@ -4,7 +4,9 @@
 
 ?>
 <h1>Informe Oferta</h1>
+<?php if($_SESSION['admin']==1):?>
 <a href="?ctrl=modificarOfertaControl&id=<?=$oferta['id']?>"><button class="btn btn-info float-right mb-3">Modificar</button></a>
+<?php endif ?>
 <table class="table table-bordered">
                 
                 <tr><td>id</td>

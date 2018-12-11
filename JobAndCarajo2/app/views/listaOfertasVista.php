@@ -28,9 +28,11 @@
 		<td><?=$oferta['psicologo']?></td>
 		<td><?=$oferta['candidato']?></td>
 
-		<td><a href="?ctrl=detalleOfertaControl&id=<?=$oferta['id']?>">[+info]</a>
-			<a href="?ctrl=modificarOfertaControl&id=<?=$oferta['id']?>">[Modificar]</a>
-			<a href="?ctrl=eliminarOfertaControl&id=<?=$oferta['id']?>">[Borrar]</a></td>
+		<td>
+			<a href="?ctrl=detalleOfertaControl&id=<?=$oferta['id']?>"><button class="btn btn-info"><i class="fas fa-info"></i></button></a>
+			<a href="?ctrl=modificarOfertaControl&id=<?=$oferta['id']?>"><button class="btn btn-info"><i class="far fa-edit"></i></button></a>
+	  	<a href="?ctrl=eliminarOfertaControl&id=<?=$oferta['id']?>" class="btn btn-info  <?= $_SESSION['admin']==0 ? 'disabled' : ''?> role="button" aria-pressed="true"><i class="fas fa-trash-alt"></i></a>
+		</td>
 	</tr>
 <?php endforeach; ?>
 </table>

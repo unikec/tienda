@@ -1,21 +1,13 @@
 <?php
 
-
 if ($_POST) { // Comprobamos que recibimos los datos y que no están vacíos
     $usuariook = $_POST['usuario'];
     $passok = $_POST['password'];
     if(loginOk($usuariook, $passok )){
-   
-        $_SESSION['dentro'] = true;
-
-        $_SESSION['usuario'] = $_POST['usuario'];
-        $_SESSION['admin']= esAdmin($_POST['usuario']); // admin está almacenado como boolean,
-
-        if( $_SESSION['admin']==1){ // 1 es administrador, 0 es psicologo
-            $_SESSION['admin']= 'administrador';
-        }else{        
-            $_SESSION['admin']= 'psicologo';
-        }
+      /*  $_SESSION['dentro'] = true;
+        $_SESSION['usuario'] = getNombre();
+        $_SESSION['admin'] = tipoUsuario();*/
+        $_SESSION['hora'] =   date("H:i:s");
         // mostramos a la página de inicio de nuestro sitio web
         header('Location:?ctrl=inicioControl');
         exit;

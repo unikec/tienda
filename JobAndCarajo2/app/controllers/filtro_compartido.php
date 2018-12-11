@@ -78,7 +78,74 @@ function FiltraCamposPost(GestorErrores $errores){
      }
 }
 
+function FiltraCamposUsuariosPost(GestorErrores $errores){
+  
+  
+  
+    // Filtramos la descripción
+    if (VPost('usuario')=='')
+    {
+        $errores->AnotaError('usuario', 'Se debe introducir texto');
+    }
+    else if ( strlen(VPost('usuario'))<3)
+    {
+        $errores->AnotaError('usuario', 'Parece que el nick es demasiado corto');
+    }
+    
+    // Filtramos el nombre de la persona 
+    $nombre=VPost('nombre');
+    if ($nombre=='')
+    {
+        $errores->AnotaError('nombre', 'Se debe introducir texto');
+    }
+    else if ( is_numeric($nombre) )
+    {
+        $errores->AnotaError('nombre', 'El nombre de la persona no puede ser un número');
+    }
+    //indique tipo de usuario
+    if (VPost('admin')=='')
+    {
+        $errores->AnotaError('usuario', 'Se debe indicar una opción');
+    }
+    //contraseña
+    if (VPost('password')=='')
+    {
+        $errores->AnotaError('password', 'Se debe introducir texto');
+    }
+    else if ( strlen(VPost('password'))<2)
+    {
+        $errores->AnotaError('password', 'Parece que la contraseña es demasiado corta');
+    }
+    
+  
+}
 
+function FiltraEdicionUsuariosPost(GestorErrores $errores){
+  
+  
+  
+    // Filtramos la descripción
+    if (VPost('usuario')=='')
+    {
+        $errores->AnotaError('usuario', 'Se debe introducir texto');
+    }
+    else if ( strlen(VPost('usuario'))<3)
+    {
+        $errores->AnotaError('usuario', 'Parece que el nick es demasiado corto');
+    }
+   
+    //contraseña
+    if (VPost('password')=='')
+    {
+        $errores->AnotaError('password', 'Se debe introducir texto');
+    }
+    else if ( strlen(VPost('password'))<2)
+    {
+        $errores->AnotaError('password', 'Parece que la contraseña es demasiado corta');
+    }
+    
+  
+}
 
 
 

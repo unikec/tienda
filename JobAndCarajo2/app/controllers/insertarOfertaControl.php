@@ -3,6 +3,9 @@
 if(!isset($_SESSION['dentro'])){
     header('Location:?ctrl=loginControl');
 }
+if(!$_SESSION['admin']){
+    header('Location:?ctrl=inicioControl');
+}
 include_once (LIB_PATH.'GestorErrores.php');
 include_once (HELPERS_PATH.'funcionesGenerales.php');
 include_once (MODEL_PATH.'funcionesOfertas.php');

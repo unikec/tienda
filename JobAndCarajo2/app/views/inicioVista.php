@@ -1,5 +1,7 @@
-<?php if(isset($_SESSION['usuario'])) :?>
-    <p>Bienvenido  <?=$_SESSION['usuario']?> eres  <?=$_SESSION['admin']?> </h2> </p>
+<?php 
+
+if($_SESSION['dentro']) :?>
+    <p>Bienvenido  <?= $_SESSION['usuario']?> eres <?=tipoUsuario()?> </h2> </p>
  <?php endif; ?>
 <h3><strong>Misión</strong></h3>
 <p>Nuestra misión consiste en <strong>hacer fácil a todas las personas encontrar el mejor empleo posible.

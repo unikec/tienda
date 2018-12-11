@@ -1,15 +1,13 @@
 <?php
-include conex.php;
+include '../php/conex.php';
 
     
-        $consulta = "SELECT * FROM alumnostb>";
-        $resultado = mysqli_query($conexion,$consulta);
+$alumnos=$conex->query("SELECT * FROM alumnostb "  );
 
         echo '<tr>
-                <th>Codigo</th>
-                <th>Nombre</th>
-                <th>Direccion</th>
-                <th>Provincia</th>
+                <th>DNI</th>
+                <th>Nombre</th> 
+                <th>Fecha Nacimiento</th>
                 <th>Poblacion</th>
                 <th>Telefono</th>
                 <th>Eliminar</th>
@@ -17,21 +15,20 @@ include conex.php;
                 <th>Notas</th>
               </tr>';
 
-        while($fila = mysqli_fetch_array($resultado)){
+        while($regAlumnos=$alumnos->fetch_assoc()){
           echo "<tr>";
-            echo "<td>".$fila["codigo"]."</td>";
-            echo "<td>".$fila["nombre"]."</td>";
-            echo "<td>".$fila["direccion"]."</td>";
-            echo "<td>".$fila["provincia"]."</td>";
-            echo "<td>".$fila["localidad"]."</td>";
-            echo "<td>".$fila["telefono"]."</td>";
-            echo "<td><button id='".$fila["codigo"]."' type='button' class='btn btn-default' onclick='eliminarAlumno(this)' style='color:red'>
+            echo "<td>".$regAlumnos["dni"]."</td>";
+            echo "<td>".$regAlumnos["nombre"]."</td>";        
+            echo "<td>".$regAlumnos["Fecha nacimiento"]."</td>";
+            echo "<td>".$regAlumnos["localidad"]."</td>";
+            echo "<td>".$regAlumnos["telefono"]."</td>";
+            echo "<td><button id='".$regAlumnos["id"]."' type='button' class='btn btn-default' onclick='eliminarAlumno(this)' style='color:red'>
             <span class='glyphicon glyphicon-remove'></span>
             </button></td>";
-            echo "<td><button id='".$fila["codigo"]."' type='button' class='btn btn-default' onclick='editarAlumno(this)'>
+            echo "<td><button id='".$regAlumnos["id"]."' type='button' class='btn btn-default' onclick='editarAlumno(this)'>
             <span class='glyphicon glyphicon-pencil'></span>
             </button></td>";
-            echo "<td><button id='".$fila["codigo"]."' type='button' class='btn btn-default' onclick='verNotas(this)'>
+            echo "<td><button id='".$regAlumnos["id"]."' type='button' class='btn btn-default' onclick='verNotas(this)'>
             <span class='glyphicon glyphicon-book' style='color:green'></span>
             </button></td>";
           echo "</tr>";

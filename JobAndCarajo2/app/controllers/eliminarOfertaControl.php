@@ -3,6 +3,9 @@
 if(!isset($_SESSION['dentro'])){
     header('Location:?ctrl=loginControl');
 }
+if(!$_SESSION['admin']){
+    header('Location:?ctrl=inicioControl');
+}
 /* Muesta la lista de tareas */
 
 include_once (MODEL_PATH.'funcionesOfertas.php');

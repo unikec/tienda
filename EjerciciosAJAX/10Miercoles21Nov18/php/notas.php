@@ -1,5 +1,5 @@
 <?php
-include conex.php;
+include '../php/conex.php';
 
  $nombre= $_GET["id"];
 

@@ -1,23 +1,32 @@
- <div class="centrar">	
-  <div class="container cuerpo text-center">	
-    <p><h2><img class="alineadoTextoImagen" src="../Assets/img/user.png"
-     width="50px"/> Login de usuario:</h2></p>
-  </div>
-  <div class="container">
-    <form   method="POST">
-      <label for="name">Usuario:
-        <input type="text" name="usuario" class="form-control"
-         value="<?php if(isset($_COOKIE['usuario'])) { echo $_COOKIE['usuario']; } ?>" /> 
-      </label>
-      <br/>
-      <label for="password">Contraseña:
-        <input type="password" name="password" class="form-control"
-         value="<?php if(isset($_COOKIE['password'])) { echo $_COOKIE['password']; } ?>"/>            
-      </label>
-<?php if(isset($login_error)) : ?>
-      <div class="alert alert-danger" style="margin-top:5px;">Tu usuario o/y tu contraseña no son correctos, inténtelo de nuevo!! :( </div>
-<?php endif; ?>      
-      <input type="submit" value="Enviar" name="submit" class="btn btn-success" />
-    </form>
-  </div>
-</div>  
+<div class="container ">
+<h2 class='text-center'><img class="" src="../Assets/img/user.png"
+     width="50px"/> Login de usuario:</h2>
+
+  <form class="form-horizontal" method="POST">
+      <div class="form-group row">
+
+        <label class="control-label col-sm-2" for="name">Usuario:</label>
+
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="usuario" name='usuario' placeholder="Enter nick" value="<?php if (isset($_COOKIE['usuario'])) {echo $_COOKIE['usuario'];}?>" >
+        </div>
+      </div>
+
+      <div class="form-group row">
+
+        <label class="control-label col-sm-2" for="pwd">Password:</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="password" name='password' placeholder="Enter password" value="<?php if (isset($_COOKIE['password'])) {echo $_COOKIE['password'];}?>"/>       </div>
+        </div>
+
+        <?php if (isset($login_error)): ?>
+          <div class="alert alert-danger" style="margin-top:5px;">Tu usuario o/y tu contraseña no son correctos, inténtelo de nuevo!! :( 
+          </div>
+        <?php endif;?>
+        <div class="form-group row">
+          <div class="col-sm-offset-2 col-sm-12">
+            <input type="submit" value="Enviar" name="submit" class="btn btn-success btn-lg btn-block" />
+          </div>
+        </div>
+  </form>
+</div>

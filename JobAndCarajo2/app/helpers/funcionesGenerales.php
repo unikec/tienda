@@ -51,6 +51,26 @@ function myCreaSelect($name,$options,$valorDefecto=''){
    return $html;
 }
 
+/**esta modificacion de la funcion anterior es debido a que al modicar la vista modificar oferta 
+me era más facil establecer la opcion disabled, si creo directamente la etiqueta selec con su class 
+directamente en la vista
+ *  */
+
+function creaSelect($options,$valorDefecto=''){
+    
+    $html='';
+    foreach ($options as $id => $valorOption) {
+        if ($id==$valorDefecto){
+            $seleccionado ='selected="selected"';
+        }else{
+            $seleccionado="";
+        }
+       
+       $html.= "<option value=".$id." ".$seleccionado.">".$valorOption."</option>";
+   }
+   $html.='</select>';
+   return $html;
+}
 
 function validaFechaE($fecha)//FORMATO ESPAÑOL DIA/MES/AÑO
 {

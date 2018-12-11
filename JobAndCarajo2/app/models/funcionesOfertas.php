@@ -159,39 +159,17 @@ function nuevaOferta( $id,$descripcion, $contacto, $telefono, $email, $direccion
 
 }
 
-/**
- * Revisar!!!!
- * Esta función no forma parte de esta futura clase oferta
- *  la función insert usuario es igual que la nueva oferta pero usando bindParadm
- * */
-function insert_usuario($id,$tipo,$usuario,$contraseña)
-{
-    $conex=Conexion::getInstance();
-    try {
-        $query=$conex->dbh->prepare('insert into usuario values(?,?,?,?)');
-       
-        $query->bindParam(1, $id);
-        $query->bindParam(2, $tipo);
-        $query->bindParam(3, $usuario);
-        $query->bindParam(4, $contraseña);
-        $query->execute();
-      //  $query->execute([$id,$tipo,$usuario,$contraseña]);
-    } catch (PDOException $e) {
-        $e->getMessage();
-    }
-}
 
 
 /**Esta función precisa de una operación previa pero independiente donde que confirme que realmente se quiere
  * borrar el registro selecionado, para evitar borrados por error
  * Esta función solo estará dispobible para el usario administrador
  * Previo a la eliminación se procederá a confirmar, interactuando con el servidor (no vale un alert de javascript).
- * Se mostrará una página de confirmación en la que se muestren los datos más importantes de la tarea 
+ * Se mostrará una página de confirmación en la que se muestren los datos más importantes de la oferta 
  * y se pregunte si se desea borrar o no.
 */
 function eliminarOferta($id) {
-    /*no olvidar pedir confirmación, esta puede ser una forma 
-     * a href="#" onclick="return confirm('Estás seguro que deseas eliminar el registro?');">Eliminar registro</a>*/
+
     $conex=Conexion::getInstance();
     $sql = "delete from ofertas where id_oferta = ?";   //prepared statements
     
@@ -209,6 +187,7 @@ function eliminarOferta($id) {
     }
             
 }
+
 /**En principio esta función permite modificar todos los campos de ofertas, salvo id y fecha de creación
  * Esta función solo estará dispobible para el usario administrador*/
 function modificarOferta( $descripcion, $contacto, $telefono, $email, $direccion, $poblacion,
@@ -224,16 +203,8 @@ function modificarOferta( $descripcion, $contacto, $telefono, $email, $direccion
             `observaciones`='$observaciones' WHERE id_oferta=$id_oferta";
       
         $conex->dbh->prepare($sql);
-
-      /* echo "<p>SQL: $sql</p>";
-       $result=$conex->dbh->exec($sql);*/
-       $conex->dbh->exec($sql); 
-        
-    /*  if($result){
-          echo "<h1>Exito</h1>";
-        }else{
-            echo "<h1>FALLO</h1>";
-        }*/
+        $conex->dbh->exec($sql); 
+   
 }
 
 
@@ -273,14 +244,14 @@ function cambiarEstado($id_oferta,$estado){
 /**Esta función es para uso del usuario psicologo
  * cuando el radio buttom de Estado esté en R(realizando Selección) o
  * bien esté activo S (seleccionando candidato)*/
-function modificarCandidato($candidato_selecionado, $otros_datos_candidato,$id_oferta){
+function modificarPsicologo($estado,$candidato, $observaciones,$id_oferta){
     $conex=Conexion::getInstance();
-    $sql=" UPDATE `ofertas` SET `candidato`=?,
+    $sql=" UPDATE `ofertas` SET `estado` = ?,`candidato`=?,
             `observaciones`=? WHERE `ofertas`.`id_oferta` = ?";
     
     $query= $conex->dbh->prepare($sql);
     
-    $result=  $query->execute([$candidato, $observaciones, $id_oferta]);
+    $result=  $query->execute([$estado,$candidato, $observaciones, $id_oferta]);
     
     //esta parte final, pueden ser elimminados una vez se compruebe la correcta ejecución del codigo
     
@@ -290,12 +261,5 @@ function modificarCandidato($candidato_selecionado, $otros_datos_candidato,$id_o
         echo "<script>alert('Error al modificar Estado')</script>";
     }
 }
-//nuevaOferta(null,'programador', 'Tom Hanns', '912632126', 'rrhh.th@guachi.es', 'AV. Estrella de la muerte 170', 'Alcobendas', '28005', '28', 'S',NULL, '2018-11-30', 'Enrique Velardo', '', '');
-//modificarOferta('programador', 'Tom Hanns', '912632126', 'rrhh.th@guachi.es', 'AV. Estrella de la muerte 170', 'Madrid', '28005', '28', 'R', '2018-11-30', 'Enrique Velardo', '', '', '24');
-//eliminarOferta('24');
-
-//cambiarEstado('25','P');
-//$x=verOfertas();
-//print_r($x);
 
 
