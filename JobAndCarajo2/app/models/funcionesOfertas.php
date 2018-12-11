@@ -1,10 +1,10 @@
 <?php
 use Problema1\app\models\Conexion;
 
-/*Incluimos el fichero de la clase Conf*/
+/**Incluimos el fichero de la clase Conf*/
 require_once 'Configuration.php';
 
-/*Incluimos el fichero de la clase Conexion*/
+/**Incluimos el fichero de la clase Conexion*/
 require_once 'Conexion.php';
 
 
@@ -14,7 +14,7 @@ require_once 'Conexion.php';
 
 /**
  * Se obtiene una list de provincias
- * @return mixed[]
+ * @return array de provincias
  */
 function getProvincias(){
         $conex=Conexion::getInstance();
@@ -145,7 +145,7 @@ function getOferta($id){
 }
  /** Función para introducir una nueva oferta, solo estará disponible para el usuario Administrador*/
 
-// probar hacer en vez de pasar cada campo, pasar una array de datos $datosOferta
+
 function nuevaOferta( $id,$descripcion, $contacto, $telefono, $email, $direccion, $poblacion,
     $cp, $id_provincia, $estado, $fecha_creacion, $fechaFin, $psicologo,$candidato, 
     $observaciones) {
@@ -209,18 +209,6 @@ function modificarOferta( $descripcion, $contacto, $telefono, $email, $direccion
 
 
 
-/*function saveOferta( $datos) {
-    $conex=Conexion::getInstance();
-    //print_r($datos);
-    $sql=" UPDATE `ofertas` SET `descripcion`=?,`contacto`=?, `telefono`=?,`email`=?,`direccion`=?,
-            `poblacion`=?,`cp`=?, `id_provincia`=?,`estado`=?, `fechaFin`=?,`psicologo`=?,`candidato`=?,
-            `observaciones`=? WHERE  id_oferta=?";
-    $query= $conex->dbh->prepare($sql);
-  //  $query->bindParam($parameter, $variable)
-    $query->execute($datos);
-   
-}*/
-
 /**Esta función es semejante a modificarOferta pero estando limitado su uso 
  * Esta función solo es para uso del usuario psicologo*/
 function cambiarEstado($id_oferta,$estado){
@@ -253,13 +241,7 @@ function modificarPsicologo($estado,$candidato, $observaciones,$id_oferta){
     
     $result=  $query->execute([$estado,$candidato, $observaciones, $id_oferta]);
     
-    //esta parte final, pueden ser elimminados una vez se compruebe la correcta ejecución del codigo
-    
-    if($result){
-        echo "<script>alert('Estado modificado correctamente')</script>";
-    }else{
-        echo "<script>alert('Error al modificar Estado')</script>";
-    }
+
 }
 
 

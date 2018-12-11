@@ -1,4 +1,8 @@
 <?php
+/** conexion en modelo singleton,
+ * Solo será posible realizar una conexión  y  no multiples,
+ * mediante el uso de getInstance
+ * */
 namespace Problema1\app\models;
 //require ''; 'confi.php';
 class Configuration

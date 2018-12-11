@@ -1,5 +1,10 @@
 <?php
 //session_start();
+/**
+ * Control que permite la conexión de la vista nuevo usuario con las funciones de filtrado y creación del usuarios pertinentes
+ * A esta parte de la aplicación solo se puede acceder desde un usuario tipo administrador, por ello desde este controlador lo 
+ * primero que hace es solo admitir la usuario logueados y solo si son administradores
+ */
 if(!isset($_SESSION['dentro'])){
     header('Location:?ctrl=loginControl');
 }

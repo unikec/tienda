@@ -1,5 +1,9 @@
 <?php
 //session_start();
+/**
+ * Control que hace de puente entre la función modificarOferta y la vista por la que se introduce los cambios
+ * Los datos introducidos son previamente filtrados antes de ser parametros de la función modificar
+ */
 if(!isset($_SESSION['dentro'])){
     header('Location:?ctrl=loginControl');
 }

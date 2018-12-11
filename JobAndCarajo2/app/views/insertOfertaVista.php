@@ -1,3 +1,7 @@
+<?php 
+/**
+ * Vista de introducción de los datos para la creación de una nueva oferta*/
+?>
 <h1>Insertando nueva oferta</h1>
 <form method="post">
 <div class="col-sm-10 mx-auto" class="form-group">

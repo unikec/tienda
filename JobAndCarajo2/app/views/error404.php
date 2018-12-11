@@ -2,7 +2,7 @@
 
 /**
  * Página de error. Mostramos directamente la información por comodidad
- * No recomendado para vistas medianamente trabajadas
+ * No deberia mostrarse si el trabajo de enlaces está correctamente desarrollado
  */
 ?>
 <h1>Error 404</h1>

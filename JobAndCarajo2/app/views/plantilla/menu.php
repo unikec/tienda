@@ -1,3 +1,11 @@
+<?php 
+/**
+El Menú de la aplicación
+Esta barra o navbar contiene los enlaces a las funciones más esenciales de la aplicación
+los enlaces a simil de botones permiten desplazarse al usuario de la aplicación
+con facilidad entre las distintas pantallas.
+*/
+?>
 <nav class="navbar navbar-expand-sm navbar-light bg-secondary ">
 
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -14,9 +22,9 @@
         <a class="nav-link <?=isset($_GET['ctrl']) && $_GET['ctrl'] == 'insertarOfertaControl' ? 'active' : ''?>" href='?ctrl=insertarOfertaControl'>Publicar una oferta</a>
       </li>
       <?php endif ?>
-      <li class="nav-item">
+     <!-- <li class="nav-item">// la opción buscar no se ha desarrollado, queda pendiente
         <a class="nav-link <?=isset($_GET['ctrl']) && $_GET['ctrl'] == 'buscarOfertaControl' ? 'active' : ''?>" href="#">buscar</a>
-      </li>
+      </li>-->
       <?php if($_SESSION['admin']==1):?>
       <li class="nav-item">
         <a class="nav-link <?=isset($_GET['ctrl']) && $_GET['ctrl'] == 'listarUsuariosControl' ? 'active' : ''?>" href='?ctrl=listarUsuariosControl'>Usuarios</a>
@@ -24,7 +32,7 @@
       <?php endif ?>
       <?php if($_SESSION['admin']==0): ?>
       <li class="nav-item">
-        <a class="nav-link <?=isset($_GET['ctrl']) && $_GET['ctrl'] == 'editarUsuariosPsicoControl' ? 'active' : ''?>" href='?ctrl=editarUsuariosPsicoControl'>Usuarios</a>
+        <a class="nav-link <?=isset($_GET['ctrl']) && $_GET['ctrl'] == 'editarUsuariosPsicoControl' ? 'active' : ''?>" href='?ctrl=editarUsuariosPsicoControl'><i class="fas fa-id-card"></i></a>
       </li>   
       <?php endif ?>
     </ul>
@@ -36,9 +44,3 @@
     </span>
   
 </nav>
-<!--<a class="navbar-brand" href='?ctrl=inicioControl'></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  bg-dark navbar-dark
--->

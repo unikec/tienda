@@ -1,4 +1,8 @@
 <?php
+/**
+ * Control que permite filtrar si se han introducido cambios en la clave o el usuario
+ * psicologo logueado, y ejecutar la funcion de modificar usuario
+ */
 //session_start();
 if(!isset($_SESSION['dentro'])){
     header('Location:?ctrl=loginControl');
@@ -13,18 +17,6 @@ include_once (MODEL_PATH.'funcionesUsuarios.php');
 // Inicializamos el gestor de errores que utilizaremos en la vista
 $errores=new GestorErrores('<span style="color:red; background:#EEE; padding:.2em 1em; margin:1em">', '</span>');
 
-
-
-/*if (! isset($_GET['id']))
-{
-    // No existe la Oferta, error
-    
-    $htmlCuerpo=  CargaVista('modificarErrores', array(
-        'descripcion_error'=>'No existe la oferta seleccionada'
-    ));
-}
-else
-{ // Han indicado el id*/
     $id=$_SESSION['id'];
     
     
@@ -83,7 +75,7 @@ else
             }
      
     }
-//} // de Han indicado el id
+
 
 // Al llegar aquí aun no he devuelto nada, podría hacer cualquier tipo de acción
 

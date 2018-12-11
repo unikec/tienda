@@ -1,4 +1,11 @@
-<!--<?= print_r($oferta)?>-->
+<?php 
+/**
+ *Vista edición
+ *Permite hacer modicaciones sobre los datos contenidos de la oferta que se esta editando
+ *Para ello es necesario tener acceso a los datos almacendos, que llegan a esta vista mediante su controlador
+ *los datos alterados pasan tambien un filtro de normas de formato que deben superar para finalmente poder modificar
+ *los datos en la oferta indicada */
+?>
 <h1>Editando</h1>
 <form method="post">
 <div class="col-sm-10 mx-auto" class="form-group">

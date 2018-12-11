@@ -1,3 +1,8 @@
+<?php
+/**
+ * VISTA DE LOGIN
+ */
+?>
 <div class="container ">
 <h2 class='text-center'><img class="" src="../Assets/img/user.png"
      width="50px"/> Login de usuario:</h2>

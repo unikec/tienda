@@ -6,7 +6,11 @@ if(!isset($_SESSION['dentro'])){
 if(!$_SESSION['admin']){
     header('Location:?ctrl=inicioControl');
 }
-/* Muestra la lista de usuarios */
+
+/**
+ * Muestra la lista de usuarios, solo es para usuario administrador y por ello
+ * este controlador restringe la entrada solo si estás logueado y si eres usuario
+*/
 
 
 

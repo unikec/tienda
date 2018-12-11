@@ -1,3 +1,9 @@
+<?php
+/**
+ * VISTA SOLO PARA USUARIOS PSICOLOGOS, QUE PUEDEN EDITAR EL CAMPO 'USUARIO' Y 'CLAVE' DE SU USUARIO
+ * 
+ */
+?>
 <h1>Editando</h1>
 <form method="post">
 <div class="col-sm-10 mx-auto" class="form-group">

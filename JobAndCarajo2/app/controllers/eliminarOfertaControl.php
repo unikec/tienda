@@ -6,7 +6,11 @@ if(!isset($_SESSION['dentro'])){
 if(!$_SESSION['admin']){
     header('Location:?ctrl=inicioControl');
 }
-/* Muesta la lista de tareas */
+/**
+ * Conector entre la vista donde se enlaza el deseo de eliminar una oferta concreta
+ * con la función eliminar oferta.
+ * Solo pueden acceder a esta funcionalidad los usuarios administradores logueados
+ *  */
 
 include_once (MODEL_PATH.'funcionesOfertas.php');
 

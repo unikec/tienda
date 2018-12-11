@@ -1,7 +1,7 @@
 <?php
 use Problema1\app\models\Conexion;
 
-/*Incluimos el fichero de la clase Conf*/
+/** Incluimos el fichero de la clase Conf*/
 require_once 'Configuration.php';
 
 /*Incluimos el fichero de la clase Conexion*/
@@ -28,7 +28,9 @@ function nuevoUsuario($id,$usuario,$nombre,$admin,$password)
         $e->getMessage();
     }
 }
-
+/**
+ * Saca los datos de un determinado usuario
+ */
 function getUsuario($id){
     $conex=Conexion::getInstance();
     $sql="SELECT * FROM usuarios where usuarios.id=$id";
@@ -49,7 +51,10 @@ function getUsuario($id){
     }
     return $oferta;
 }
-
+ 
+/**
+ * Modifica usuario y clave de un usuario concreto mediante id
+ */
 function modificarUsuario($usuario,$password,$idUsuario){
         
         $conex=Conexion::getInstance();
@@ -62,7 +67,10 @@ function modificarUsuario($usuario,$password,$idUsuario){
 
 }//end functio modificar clave o usuario
 
-
+/**
+ * Se borran los datos almacenados de un usuario concreto de la
+ * tabla usuarios
+ */
 function eliminarUsuario($id) {
 
     $conex=Conexion::getInstance();
@@ -77,6 +85,9 @@ function eliminarUsuario($id) {
     }
             
 } 
+/**
+ * Permite tener acceso a todos los usuarios contenidos en la tabla usuarios
+ */
 function listarUsuarios(){
     
   $conex=Conexion::getInstance();

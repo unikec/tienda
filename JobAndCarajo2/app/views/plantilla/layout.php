@@ -8,8 +8,7 @@ Deberemos indicarle:
     - menu
     - cuerpo
 
-Podría tener tantos parámetros como quisiesemos
-Igualmente nuestra aplicación podría tener tantos layouts como deseasemos
+
 -->
 <!DOCTYPE html>
 <html lang="en">

@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Controla si el usuario está logueado o de lo contrario lo redirige continuamente para que lo consiga
+ */
 if ($_POST) { // Comprobamos que recibimos los datos y que no están vacíos
     $usuariook = $_POST['usuario'];
     $passok = $_POST['password'];

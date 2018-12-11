@@ -1,4 +1,10 @@
 <?php
+/**
+ * Control que permite la conexión de la vista lista usuarios con las funciones de eliminar un usuario,
+ *  pero previamente requiere confirmación.
+ * A esta parte de la aplicación solo se puede acceder desde un usuario tipo administrador, por ello desde este controlador lo 
+ * primero que hace es solo admitir la usuario logueados y solo si son administradores
+ */
 //session_start();
 if(!isset($_SESSION['dentro'])){
     header('Location:?ctrl=loginControl');

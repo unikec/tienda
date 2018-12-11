@@ -1,3 +1,8 @@
+<?php 
+/**Esta vista nos da la oportunidad de volver a rebisar los datos que queremos borrar
+a mismo tiempo que nos pide la confirmación de que realmente se quiere borrar la oferta indicada o 
+bien solo es que hemos pulsado el boton de enlace al borrado por error*/
+?>
 <h3 class="text-center">¿Realmente desea borrar la oferta correspondiente a los siguiente datos?</h3>
 
 <form  method="post">

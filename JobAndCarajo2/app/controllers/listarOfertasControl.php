@@ -3,7 +3,11 @@
 if(!isset($_SESSION['dentro'])){
     header('Location:?ctrl=loginControl');
 }
-/* Muesta la lista de tareas */
+/**
+ *  Muestra la lista de Ofertas
+ * controla que el usuario este logueado
+ * porporciona información a la vista para la paginación
+ * y mostrar la tabla completa de ofertas */
 
 include_once (MODEL_PATH.'funcionesOfertas.php');
 

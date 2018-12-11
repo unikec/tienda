@@ -1,3 +1,12 @@
+<?php
+/**
+ * VISTA QUE PERMITE AL ADMINISTRADOR CREAR UN NUEVO USUARIO.
+ * El controlador será el que filtre si la información introducida está conforme preestablecido
+ * o si por el contrario no se ha introducido ningun dato
+ * En el caso de cumplir los requisitos el controlador permitirá ejecutar la función que cree un nuevo espacio 
+ * tipo ususario en la tabla usuarios de nuestra aplicación.
+ */
+?>
 <h1>Insertando nuevo usuario</h1>
 <form method="post">
 <div class="col-sm-10 mx-auto" class="form-group">

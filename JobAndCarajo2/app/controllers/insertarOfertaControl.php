@@ -6,6 +6,12 @@ if(!isset($_SESSION['dentro'])){
 if(!$_SESSION['admin']){
     header('Location:?ctrl=inicioControl');
 }
+
+/**
+ * Control que permite la conexión de la vista para crear una nueva oferta con las funciones de filtrado y creación del oferta pertinentes
+ * A esta parte de la aplicación solo se puede acceder desde un usuario tipo administrador, por ello desde este controlador lo 
+ * primero que hace es solo admitir la usuario logueados y solo si son administradores
+ */
 include_once (LIB_PATH.'GestorErrores.php');
 include_once (HELPERS_PATH.'funcionesGenerales.php');
 include_once (MODEL_PATH.'funcionesOfertas.php');

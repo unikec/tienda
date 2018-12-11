@@ -1,5 +1,6 @@
-<?php 
-
+<?php
+/**En esta vista se da la bienvenida al usuario y se informa de los valores y principios de la empresa
+ * */
 if($_SESSION['dentro']) :?>
     <p>Bienvenido  <?= $_SESSION['usuario']?> eres <?=tipoUsuario()?> </h2> </p>
  <?php endif; ?>

@@ -22,13 +22,8 @@ function & CargaVista($vista, array  $variablesDeVista=NULL) //el &  es para que
         extract($variablesDeVista);
     }
     
-    /* La función anterior hace lo mismo que  el siguiente código */
-    /*
-     foreach($variablesDeVista as $__nombreVariable__=>$__valorVariable__)
-     {   // OJO al doble $
-     $__nombreVariable__=$__valorVariable__;
-     }
-     */
+   
+    
     
     // Interpretamos plantilla
     ob_start();

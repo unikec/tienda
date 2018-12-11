@@ -1,6 +1,6 @@
 <?php
 /**
- * Funciones de ayuda que nos permitirán trabajar con formularios
+ * Funciones de ayuda que nos permitirán trabajar con los formularios
  *
  */
 
@@ -54,7 +54,7 @@ function myCreaSelect($name,$options,$valorDefecto=''){
 /**esta modificacion de la funcion anterior es debido a que al modicar la vista modificar oferta 
 me era más facil establecer la opcion disabled, si creo directamente la etiqueta selec con su class 
 directamente en la vista
- *  */
+*/
 
 function creaSelect($options,$valorDefecto=''){
     

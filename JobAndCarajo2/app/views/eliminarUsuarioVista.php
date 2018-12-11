@@ -1,3 +1,8 @@
+<?php
+/**
+ * Vista de confirmación de que realmente quiere borrar los datos del usuario seleccionado
+ */
+?>
 <h3 class="text-center">¿Realmente desea borrar el usuario correspondiente a los siguiente datos?</h3>
 
 <form  method="post">

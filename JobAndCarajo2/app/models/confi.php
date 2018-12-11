@@ -1,6 +1,6 @@
 <?php
 
-//Datos de configuración de la conexión a la base de datos
+/**Datos de configuración de la conexión a la base de datos*/
 
 //Servidor
 $host='localhost';

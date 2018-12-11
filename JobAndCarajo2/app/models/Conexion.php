@@ -18,7 +18,7 @@ class Conexion {
     
     
     
-    /*La función construct es privada para evitar que el objeto pueda 
+    /**La función construct es privada para evitar que el objeto pueda 
      * ser creado mediante new*/
     private function __construct(){
        
@@ -26,7 +26,7 @@ class Conexion {
         $this->conectar();
     }
     
-    /*Método para establecer los parámetros de la conexión*/
+    /**Método para establecer los parámetros de la conexión*/
     private function setConexion(){
         $conf = CONFIGURATION::getInstance();
         $this->servidor=$conf->getHostDB();
@@ -38,11 +38,11 @@ class Conexion {
     }
     /** Siguiendo el patron Singleton las funciones, __clone(), y conectar() son privadas*/
     
-    /*Evitamos el clonaje del objeto. Patrón Singleton*/
+    /**Evitamos el clonaje del objeto. Patrón Singleton*/
     private function __clone(){ }
     
    
-    /*Función encargada de crear, si es necesario, el objeto. Esta es la función que debemos llamar
+    /**Función encargada de crear, si es necesario, el objeto. Esta es la función que debemos llamar
      *  desde fuera de la clase para instanciar el objeto, y así, poder utilizar sus métodos*/
     public static function getInstance(){
         if (!(self::$_instance instanceof self)){
@@ -51,7 +51,7 @@ class Conexion {
         return self::$_instance;
     }
     
-    /*Realiza la conexión a la base de datos.*/
+    /**Realiza la conexión a la base de datos.*/
     private  function conectar(){
      
         try{ 

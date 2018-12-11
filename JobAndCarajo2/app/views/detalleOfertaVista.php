@@ -1,6 +1,7 @@
 <?php
 /**
- * Vista para ver en detalle la información contenida en la base de datos sobre una oferta en concreto*/
+ * Vista para ver en detalle la información contenida en la base de datos sobre una oferta en concreto
+ * Es la información ampliada del anticipo que se muestra en la tabla de listaOfertas*/
 
 ?>
 <h1>Informe Oferta</h1>
