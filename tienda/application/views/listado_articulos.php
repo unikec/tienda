@@ -1,29 +1,29 @@
 <?php
 /* foreach ($productos -> result() as $row) {
-echo $row->imagen.'<br>';
-}
+  echo $row->imagen.'<br>';
+  }
  */
 ?>
-<div class="container">
-	<h2>Productos destacados</h2>
-	
-    <div class="row">
-        <div class="col-md-6">
-            <table class="table table-borderless">
-		<tbody>
-            <tr>
-	<?php foreach ($productos->result() as $row) :?>
-          <td><img src="<?=base_url().'/img/' . $row->imagen ?>" alt="" class="img-fluid" height="100" width="100"></td></tr>
-          <tr><td> <?= $row->nombre ?></td></tr>
-          <tr><td><?= $row->precio ?></td></tr>
-          <tr><td><button>Al carrito</button ></td></tr></div>
-        <?php endforeach;?>   
+    <h2><?php $h2Inicial ?></h2>
 
-      </div>
-		</tbody>
-	</table>
-</div>
+    <div class="row col-md-12">
+       
+                            
+                    <?php foreach ($productos as $row) : ?>
+                    <table class="table-borderless col-md-3">
+                        
+                        <tr><td><a href="<?= site_url() . '/productos/mostrarDetalle/' . $row->producto_id ?>"><img src="<?= base_url() . '/img/' . $row->imagen ?>" alt="" class="img-fluid" height="100" width="100"></a></td></tr>
+                        <tr><td> <?= $row->nombre ?></td></tr>
+                        <tr><td><?= $row->precio ?></td></tr>
+                        <tr><td><button>Al carrito</button ></td></tr>
+                       
+                     </table>
+                    <?php endforeach; ?>   
 
-</body>
+                
+            
+        </div>
 
-</html>
+        </body>
+
+        </html>
